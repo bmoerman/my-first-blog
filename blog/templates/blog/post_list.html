@@ -1,13 +1,12 @@
-<html>
-    <head>
-        <title>Django G blog</title>
-    </head>
-    <body>
-        {% for post in posts %}
-             <h1>{{ post.title }}</h1>
-             <p>Created on {{ post.created_date }}</p>
-             <p>{{ post.text }}</p>
-             <hr>
-        {% endfor %}
-    </body>
-</html>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+{% for post in posts %}
+<h2><a href="/">{{ post.title }}</a></h2>
+<p>Created on {{ post.created_date }}</p>
+<p>{{ post.text }}</p>
+<hr>
+{% endfor %}
+
+{% endblock %}
